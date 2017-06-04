@@ -1,4 +1,5 @@
 <?php
+require_once "init.php";
 function create_zip($files = array(),$destination = '',$overwrite = false) {
 	//if the zip file already exists and overwrite is false, return false
 	if(file_exists($destination) && !$overwrite) { return false; }
@@ -40,7 +41,7 @@ function create_zip($files = array(),$destination = '',$overwrite = false) {
 	}
 }
 
-$folder_name = isset($_GET['folder']) ? $_GET['folder'] : null;
+$folder_name = isset($_GET['hash']) ? $_GET['hash'] : null;
 $archive_name = isset($_GET['archive']) ? $_GET['archive'] : null;
 
 $files_to_zip = array();
